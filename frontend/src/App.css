@@ -1,0 +1,260 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure body and html take full height */
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Premium font stack */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* Define premium color palette */
+  :root {
+    --primary-color: #1a73e8; /* Vibrant blue */
+    --primary-dark: #1557b0; /* Darker blue for hover */
+    --accent-color: #ffd700; /* Gold for premium highlights */
+    --dark-bg: #0a0a1a; /* Deep navy for video page */
+    --light-bg: #f8fafc; /* Clean white for homepage */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+  }
+  
+  /* Fullscreen container for video */
+  .video-page-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--dark-bg), #1c2526); /* Premium gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Fullscreen video element */
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  /* Video overlay with glassmorphism */
+  .video-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: var(--transition);
+  }
+  
+  .video-overlay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+  }
+  
+  /* Base button styling */
+  button {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); /* Gradient for premium feel */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Premium button hover effect */
+  button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    box-shadow: 0 6px 16px var(--shadow-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Ripple effect on click */
+  button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+  }
+  
+  button:active::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+  
+  /* Input field styling */
+  input {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    background: var(--glass-bg);
+    color: white;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+  
+  input:focus {
+    border-color: var(--accent-color); /* Gold border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Homepage container styling */
+  .homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--light-bg), #e2e8f0); /* Subtle premium gradient */
+  }
+  
+  /* Join meeting box with premium design */
+  .join-meeting-box {
+    text-align: center;
+    background: var(--light-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px var(--shadow-color);
+    width: 350px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 215, 0, 0.2); /* Subtle gold border */
+  }
+  
+  .join-meeting-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px var(--shadow-color);
+    border-color: var(--accent-color);
+  }
+  
+  /* Premium typography */
+  .join-meeting-box h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 1rem;
+  }
+  
+  .join-meeting-box p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Mobile Responsive Design */
+  @media (max-width: 768px) {
+    /* Video page adjustments */
+    .video-page-container {
+      height: 100vh;
+    }
+  
+    .video-overlay {
+      bottom: 15px;
+      left: 15px;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    /* Homepage adjustments */
+    .homepage-container {
+      padding: 1rem;
+    }
+  
+    .join-meeting-box {
+      width: 90%;
+      max-width: 320px;
+      padding: 2rem;
+    }
+  
+    .join-meeting-box h1 {
+      font-size: 1.5rem;
+    }
+  
+    .join-meeting-box p {
+      font-size: 0.9rem;
+    }
+  
+    /* Button adjustments */
+    button {
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+    }
+  
+    /* Input adjustments */
+    input {
+      padding: 0.65rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Extra Small Devices (below 480px) */
+  @media (max-width: 480px) {
+    .video-overlay {
+      bottom: 10px;
+      left: 10px;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .join-meeting-box {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .join-meeting-box h1 {
+      font-size: 1.3rem;
+    }
+  
+    .join-meeting-box p {
+      font-size: 0.85rem;
+    }
+  
+    button {
+      padding: 0.65rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    input {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  
+    /* Prevent iOS zoom on input */
+    input,
+    button {
+      font-size: 16px; /* Minimum to avoid zoom */
+    }
+  }
