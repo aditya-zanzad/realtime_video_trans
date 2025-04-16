@@ -5,7 +5,7 @@ import { APP_ID, SERVER_SECRET } from '../components/Constant';
 import io from 'socket.io-client';
 import './Videopage.css';
 
-const socket = io.connect('http://localhost:5000'); // Update if hosted elsewhere
+const socket = io.connect('https://realtime-video-trans-backend.onrender.com'); // Update if hosted elsewhere
 
 const languageOptions = [
   { code: 'ar', label: 'Arabic', flag: '🇸🇦' },
