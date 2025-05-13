@@ -76,7 +76,7 @@ const Homepage = () => {
                   </div>
                   <div className="qr-code-container">
                     <QRCode
-                      value={`http://localhost:5173/room/${meetingId}`}
+                      value={`https://realtime-video-trans.vercel.app/room/${meetingId}`}
                       size={200}
                       fgColor="#ffffff"
                       eyeRadius={5}
